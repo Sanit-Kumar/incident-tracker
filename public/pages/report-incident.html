@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report Incident</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f9;
+      }
+
+      .container {
+        max-width: 700px;
+        margin: 40px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        margin-bottom: 15px;
+      }
+
+      button {
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      #message {
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Report Incident</h1>
+
+      <form id="incidentForm">
+        <label>Title</label>
+        <input type="text" id="title" required />
+
+        <label>Description</label>
+        <textarea id="description" required></textarea>
+
+        <label>Type</label>
+        <select id="type">
+          <option value="phishing">Phishing</option>
+          <option value="malware">Malware</option>
+          <option value="data_breach">Data Breach</option>
+        </select>
+
+        <label>Severity</label>
+        <select id="severity">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <button type="submit">Submit Incident</button>
+      </form>
+
+      <p id="message"></p>
+    </div>
+
+    <script src="../js/employee.js"></script>
+  </body>
+</html>

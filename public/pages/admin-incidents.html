@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Manage Incidents</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f9;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px;
+      }
+
+      th {
+        background: #f0f0f0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Manage Incidents</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Severity</th>
+            <th>Status</th>
+            <th>Created By</th>
+          </tr>
+        </thead>
+
+        <tbody id="adminIncidentTable"></tbody>
+      </table>
+    </div>
+
+    <script src="../js/admin.js"></script>
+  </body>
+</html>
