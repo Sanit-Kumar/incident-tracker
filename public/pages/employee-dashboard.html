@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -19,42 +20,88 @@
 
       .container {
         width: 90%;
-        max-width: 1000px;
+        max-width: 1200px;
         margin: 40px auto;
       }
 
       .header {
         background: white;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 20px;
+        padding: 25px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .brand {
+        color: #2563eb;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      .dashboard-title {
+        font-size: 32px;
+        margin-bottom: 8px;
+      }
+
+      .welcome {
+        color: #666;
+      }
+
+      .logout-btn {
+        background: #dc2626;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .logout-btn:hover {
+        opacity: 0.9;
       }
 
       .cards {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
       }
 
       .card {
         background: white;
-        padding: 25px;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .card h2 {
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        color: #666;
+        margin-bottom: 20px;
       }
 
       .card a {
         text-decoration: none;
+      }
+
+      .card-btn {
+        display: inline-block;
+        background: #2563eb;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 8px;
         font-weight: bold;
       }
 
-      .logout {
-        margin-top: 20px;
-      }
-
-      button {
-        padding: 10px 20px;
-        cursor: pointer;
+      .card-btn:hover {
+        opacity: 0.9;
       }
     </style>
   </head>
@@ -62,26 +109,33 @@
   <body>
     <div class="container">
       <div class="header">
-        <h1>Employee Dashboard</h1>
-        <p id="welcomeText"></p>
+        <div>
+          <div class="brand">Cybersecurity Incident Tracking System</div>
+
+          <div class="dashboard-title">Employee Dashboard</div>
+
+          <div id="welcomeText" class="welcome">Welcome User</div>
+        </div>
+
+        <button id="logoutBtn" class="logout-btn">Logout</button>
       </div>
 
       <div class="cards">
         <div class="card">
           <h2>Report Incident</h2>
-          <br />
-          <a href="report-incident.html"> Open </a>
+
+          <p>Create and submit a new cybersecurity incident report.</p>
+
+          <a href="report-incident.html" class="card-btn"> Open </a>
         </div>
 
         <div class="card">
           <h2>My Incidents</h2>
-          <br />
-          <a href="my-incidents.html"> Open </a>
-        </div>
-      </div>
 
-      <div class="logout">
-        <button id="logoutBtn">Logout</button>
+          <p>View all incidents created by you.</p>
+
+          <a href="my-incidents.html" class="card-btn"> Open </a>
+        </div>
       </div>
     </div>
 

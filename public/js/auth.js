@@ -4,7 +4,6 @@ loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const email = document.getElementById("email").value;
-
   const password = document.getElementById("password").value;
 
   const response = await fetch("/api/auth/login", {
@@ -22,8 +21,8 @@ loginForm.addEventListener("submit", async (e) => {
 
   if (data.success) {
     localStorage.setItem("token", data.token);
-
     localStorage.setItem("role", data.user.role);
+    localStorage.setItem("user", JSON.stringify(data.user));
 
     document.getElementById("message").innerText = "Login Successful";
 

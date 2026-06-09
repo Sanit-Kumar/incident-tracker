@@ -1,72 +1,169 @@
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Report Incident</title>
 
     <style>
-      body {
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
         font-family: Arial, sans-serif;
+      }
+
+      body {
         background: #f4f6f9;
       }
 
       .container {
-        max-width: 700px;
+        width: 90%;
+        max-width: 800px;
         margin: 40px auto;
+      }
+
+      .header {
         background: white;
         padding: 25px;
-        border-radius: 10px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        margin-bottom: 25px;
+      }
+
+      .brand {
+        color: #2563eb;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      .page-title {
+        font-size: 32px;
+      }
+
+      .back-btn {
+        background: #2563eb;
+        color: white;
+        text-decoration: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+      }
+
+      .form-card {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
       }
 
       input,
       textarea,
       select {
         width: 100%;
-        padding: 10px;
-        margin-top: 8px;
-        margin-bottom: 15px;
+        padding: 14px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 16px;
       }
 
-      button {
-        padding: 10px 20px;
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        outline: none;
+        border-color: #2563eb;
+      }
+
+      .submit-btn {
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 14px 24px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
         cursor: pointer;
       }
 
+      .submit-btn:hover {
+        opacity: 0.9;
+      }
+
       #message {
-        margin-top: 15px;
+        margin-top: 20px;
+        font-weight: bold;
       }
     </style>
   </head>
+
   <body>
     <div class="container">
-      <h1>Report Incident</h1>
+      <div class="header">
+        <div>
+          <div class="brand">Cybersecurity Incident Tracking System</div>
 
-      <form id="incidentForm">
-        <label>Title</label>
-        <input type="text" id="title" required />
+          <div class="page-title">Report Incident</div>
+        </div>
 
-        <label>Description</label>
-        <textarea id="description" required></textarea>
+        <a href="employee-dashboard.html" class="back-btn"> Dashboard </a>
+      </div>
 
-        <label>Type</label>
-        <select id="type">
-          <option value="phishing">Phishing</option>
-          <option value="malware">Malware</option>
-          <option value="data_breach">Data Breach</option>
-        </select>
+      <div class="form-card">
+        <form id="incidentForm">
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" id="title" required />
+          </div>
 
-        <label>Severity</label>
-        <select id="severity">
-          <option value="low">Low</option>
-          <option value="medium">Medium</option>
-          <option value="high">High</option>
-        </select>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea id="description" required></textarea>
+          </div>
 
-        <button type="submit">Submit Incident</button>
-      </form>
+          <div class="form-group">
+            <label>Type</label>
+            <select id="type">
+              <option value="phishing">Phishing</option>
+              <option value="malware">Malware</option>
+              <option value="data_breach">Data Breach</option>
+            </select>
+          </div>
 
-      <p id="message"></p>
+          <div class="form-group">
+            <label>Severity</label>
+            <select id="severity">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Incident</button>
+        </form>
+
+        <p id="message"></p>
+      </div>
     </div>
 
     <script src="../js/employee.js"></script>
