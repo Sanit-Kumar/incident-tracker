@@ -1,0 +1,48 @@
+-- Create Users Table
+
+CREATE TABLE users (
+id SERIAL PRIMARY KEY,
+
+name VARCHAR(100) NOT NULL,
+
+email VARCHAR(255) UNIQUE NOT NULL,
+
+password VARCHAR(255) NOT NULL,
+
+role VARCHAR(20) NOT NULL,
+
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
+
+);
+
+-- Create Incidents Table
+
+CREATE TABLE incidents (
+id SERIAL PRIMARY KEY,
+
+title VARCHAR(255) NOT NULL,
+
+description TEXT NOT NULL,
+
+type VARCHAR(50) NOT NULL,
+
+severity VARCHAR(20) NOT NULL,
+
+status VARCHAR(20) DEFAULT 'open',
+
+admin_notes TEXT,
+
+created_by INTEGER NOT NULL,
+
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+CONSTRAINT fk_created_by
+    FOREIGN KEY (created_by)
+    REFERENCES users(id)
+    ON DELETE CASCADE
+
+
+);
