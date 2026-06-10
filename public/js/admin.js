@@ -24,6 +24,9 @@ if (totalIncidents) {
     document.getElementById("openIncidents").innerText =
       data.stats.open_incidents;
 
+    document.getElementById("inProgressIncidents").innerText =
+      data.stats.in_progress_incidents;
+
     document.getElementById("resolvedIncidents").innerText =
       data.stats.resolved_incidents;
 

@@ -90,12 +90,17 @@ const getDashboardStats = async () => {
       ) AS open_incidents,
 
       COUNT(*) FILTER (
+        WHERE status = 'in_progress'
+      ) AS in_progress_incidents,
+
+      COUNT(*) FILTER (
         WHERE status = 'resolved'
       ) AS resolved_incidents,
 
       COUNT(*) FILTER (
         WHERE severity = 'high'
       ) AS high_severity_incidents
+
     FROM incidents;
   `;
 
