@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -87,6 +86,68 @@
       tr:hover {
         background: #f8f9fa;
       }
+
+      .manage-btn {
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.2s;
+      }
+
+      .manage-btn:hover {
+        background: #1d4ed8;
+        transform: translateY(-1px);
+      }
+
+      #updateModal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-content {
+        background: white;
+        width: 500px;
+        margin: 80px auto;
+        padding: 25px;
+        border-radius: 10px;
+      }
+
+      .modal-content h2 {
+        margin-bottom: 20px;
+      }
+
+      .modal-content select,
+      .modal-content textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        margin-bottom: 20px;
+      }
+
+      .update-btn {
+        background: #16a34a;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      .cancel-btn {
+        background: #dc2626;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
     </style>
   </head>
 
@@ -112,11 +173,38 @@
               <th>Severity</th>
               <th>Status</th>
               <th>Created By</th>
+              <th>Action</th>
             </tr>
           </thead>
 
           <tbody id="adminIncidentTable"></tbody>
         </table>
+      </div>
+    </div>
+
+    <div id="updateModal">
+      <div class="modal-content">
+        <h2>Update Incident</h2>
+
+        <input type="hidden" id="incidentId" />
+
+        <label>Status</label>
+
+        <select id="status">
+          <option value="open">Open</option>
+
+          <option value="in_progress">In Progress</option>
+
+          <option value="resolved">Resolved</option>
+        </select>
+
+        <label>Admin Notes</label>
+
+        <textarea id="adminNotes" rows="5"></textarea>
+
+        <button id="updateIncidentBtn" class="update-btn">Update</button>
+
+        <button id="closeModalBtn" class="cancel-btn">Cancel</button>
       </div>
     </div>
 
