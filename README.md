@@ -369,6 +369,6 @@ This project demonstrates:
 
 # Author
 
-**Sanit Kumar**
+**Sanit Kumar Amartya**
 
 Cybersecurity Incident Tracking System built using Node.js, Express.js, PostgreSQL, JWT Authentication, and Vanilla JavaScript.
